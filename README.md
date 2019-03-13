@@ -19,7 +19,7 @@ Configuring objects to conditionally use in rendering. \
 Using componentDidMount lifecycle method to load state
 
 
-#### Non-React based features:\
+#### Non-React based features:
 Getting users geolocation\
 Some styling techniques\
 Using SemanticUI to aid in styling.
