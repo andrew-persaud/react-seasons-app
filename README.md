@@ -1,13 +1,13 @@
-#A simple App to show the basics of React.
+# A simple App to show the basics of React.
 
-##How to run:
+## How to run:
 
 Must have Node installed
 
 From the command line: npm run start
 
 
-Outlines the following:
+### Outlines the following:
 
 Creating class or functional components\
 Setting and updating state\
