@@ -1,12 +1,61 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import SeasonDisplay from './SeasonDisplay.js'
+import './SeasonDisplay.css'
+import Spinner from './Spinner.js';
+import Error from './Error.js'
 
-ReactDOM.render(<App />, document.getElementById('root'));
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+class App extends React.Component {
+    
+    //initialize your state
+    state = {
+        lat: null,
+        err : ''
+    };
+
+    //Can use to load state
+    componentDidMount() {
+        window.navigator.geolocation.getCurrentPosition(
+            position => this.setState({lat : position.coords.latitude}), 
+            (err) => this.setState({err : err.message})
+        );
+    }
+
+    //Can use to save state
+    componentDidUpdate() {
+        console.log('Component was updated');
+    }
+
+    //helper function
+    renderContent = () => {
+        if (!this.state.lat && this.state.err) {
+            return <div><Error message="User Denied Their GeoLocation." /></div>
+        }
+
+        if (this.state.lat && !this.state.err) {
+            return (
+                <div>
+                    <SeasonDisplay
+                        lat={this.state.lat}
+                        err={this.state.err}
+                    />
+                </div>
+            ) 
+        }
+
+        return (
+            <div><Spinner /></div>
+        )
+    }
+    //Can send your state as props
+    render() {
+        return (
+            <div className="">
+                {this.renderContent()}
+            </div>
+        )
+    }
+}
+
+ReactDOM.render(<App/>, document.querySelector('#root'));

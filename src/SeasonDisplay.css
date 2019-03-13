@@ -1,0 +1,53 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  box-sizing: border-box; }
+
+.icon-right {
+  position: absolute;
+  top: 1rem;
+  left: 1rem; }
+
+.icon-left {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem; }
+
+.season-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; }
+
+.error-display {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #777; }
+
+.error-display-text {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-transform: uppercase; }
+
+.winter {
+  background-color: aliceblue; }
+  .winter i {
+    color: blue; }
+
+.summer {
+  background-color: orange; }
+  .summer i {
+    color: red;
+    transition: all .2s; }
