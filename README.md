@@ -28,8 +28,10 @@ Using SemanticUI to aid in styling.
 
 User is prompted to allow location information by the browser.
 
-If they allow, a message will show: Message will indicate it's cold if it's currently not summer,
+If they allow, a message will show: Message will indicate it's 
 
-or message will indicate it's hot if it's currently not winter. 
+cold if it's currently not summer,or message will indicate it's 
+
+hot if it's currently not winter. 
 
 If the user denies, an error screen is shown, indicating that the user denied geolocation.
